@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid layout columna</title>
+    <style>
+
+    .layout-column {
+        width: 40%;
+        margin: auto;
+    }
+
+    .example {
+        display: grid;
+        grid-template-areas:
+        "example__titulo example__imagen"
+        "example__parrafo example__imagen"
+        "example__boton example__imagen";       
+    }
+    
+    .example--imagen-izquierda {
+        grid-template-areas:
+        "example__imagen example__titulo"
+        "example__imagen example__parrafo"
+        "example__imagen example__boton";
+    }
+    
+    .example__titulo {
+        grid-area: example__titulo;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-right: 60px;        
+    }
+
+    .example__parrafo {
+        grid-area: example__parrafo;
+        font-family: Georgia,'Times New Roman', Times, sans-serif;
+        font-size: .8em;
+        margin-right: 60px;
+    }
+
+    .example__boton {        
+        grid-area: example__boton;                 
+        background-color: black;
+        border-radius: 50px;
+        margin-left: 70px;       
+        text-align: center;
+        height: 25px;
+        width: 25%;
+    }
+
+    .example__boton > a {       
+        color: white;       
+        font-family: Arial, Helvetica, sans-serif;        
+        font-size: .8em;
+        font-weight: bold;
+        margin-left: -60px;
+        padding: 5px 25px;
+        position: absolute;
+        text-decoration: none;
+    }
+
+    .example__imagen {
+        grid-area: example__imagen;
+        width: 300px;
+    }
+
+    .rotulo {
+        text-align: center;
+    }
+
+    .layout-column__first,
+    .layout-column__second,
+    .layout-column__three {
+        margin-bottom: 50px;
+    }
+
+    .example--imagen-izquierda > .example__titulo,
+    .example--imagen-izquierda > .example__parrafo {
+        text-align: right;
+        margin-right: 0;
+    }
+
+    .example--imagen-izquierda > .example__titulo {       
+        margin-left: 45px;
+    }
+    .example--imagen-izquierda > .example__parrafo {
+        margin-left: 80px;
+    }
+    .example--imagen-izquierda > .example__boton {
+        margin-left: 210px;
+    }
+    </style>
+</head>
+<body>
+    <h1 class="rotulo">Grid Layout Columna</h1>
+    <br>
+    <br>
+    <div class="layout-column">
+        <div class="layout-column__first">
+            <div class="example"> 
+                <h2 class="example__titulo">Automatically light the way for the pizza delivery guy</h2>
+                <p class="example__parrafo">Build a smart home that responds to every cue—from locking your front door to welcoming the delivery guy.</p>
+                <div class="example__boton">
+                    <a href="#">Get started</a>
+                </div>
+                <div class="example__imagen">
+                    <img src="imagen1.png" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="layout-column__second">
+            <div class="example example--imagen-izquierda"> 
+                <h2 class="example__titulo ">Post your photo anywhere and see it everywhere</h2>
+                <p class="example__parrafo">We help social media play nice together. Never tweet a link instead of a picture again!</p>
+                <div class="example__boton">
+                    <a href="#">Sing up</a>
+                </div>
+                <div class="example__imagen">
+                    <img src="imagen2.png" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="layout-column__three">
+            <div class="example"> 
+                <h2 class="example__titulo ">Make your voice assistant more personal</h2>
+                <p class="example__parrafo">Just say the word, and we’ll help you stay in-sync across systems as you go through your day.</p>
+                <div class="example__boton">
+                    <a href="#">Give it a try</a>
+                </div>
+                <div class="example__imagen">
+                    <img src="imagen3.png" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
